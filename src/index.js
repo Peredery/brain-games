@@ -29,7 +29,7 @@ const playGame = (gameId, name) => {
     const [question, correctAnswer] = getGameInfo(gameId);
     console.log(`Question: ${question}`);
     const userAnswer = askInteractiveQuestion('Your answer:');
-    if (userAnswer !== correctAnswer) return `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`;
+    if (userAnswer !== correctAnswer) return `"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${name}!`;
     console.log('Correct!');
   }
   return `Congratulations, ${name}!`;
