@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import init from '../src/cli';
-
-console.log('Welcome to the Brain Games!');
+import init from '../src/cli.js';
 
 init();
