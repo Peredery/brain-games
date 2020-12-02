@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import brainEven from './games/brain-even.js';
 import brainCalc from './games/brain-calc.js';
 import brainGcd from './games/brain-gcd.js';
+import brainProgression from './games/brain-progression.js';
 
 const askInteractiveQuestion = (text) => readlineSync.question(`${text} `);
 
@@ -13,6 +14,8 @@ const getGameInfo = (gameId) => {
       return brainCalc();
     case 2:
       return brainGcd();
+    case 3:
+      return brainProgression();
     default:
       return Error('Wrong gameID!');
   }

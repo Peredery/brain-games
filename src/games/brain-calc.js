@@ -28,8 +28,7 @@ const init = () => {
   const operation = getOperation(getRndNumber(0, 2));
   const correctAnswer = String(calculateExpression(firstNum, secondNum, operation));
   const question = `${firstNum} ${operation} ${secondNum}`;
-  const gameRoundInfo = [question, correctAnswer];
-  return gameRoundInfo;
+  return [question, correctAnswer];
 };
 
 export default init;

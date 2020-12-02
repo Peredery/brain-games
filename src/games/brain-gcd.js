@@ -14,8 +14,7 @@ const init = () => {
   const secondNum = getRndNumber(1, 20);
   const correctAnswer = String(getGcd(firstNum, secondNum));
   const question = `${firstNum} ${secondNum}`;
-  const gameRoundInfo = [question, correctAnswer];
-  return gameRoundInfo;
+  return [question, correctAnswer];
 };
 
 export default init;
