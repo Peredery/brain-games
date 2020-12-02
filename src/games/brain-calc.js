@@ -1,7 +1,5 @@
 import getRndNumber from '../randomNumber.js';
 
-const isEven = (num) => (num % 2 === 0 ? 'yes' : 'no');
-
 const getOperation = (num) => {
   switch (num) {
     case 0:
