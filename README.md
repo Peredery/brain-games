@@ -21,6 +21,36 @@ $ make link
 $ brain-even
 ```
 Rule: Answer "yes" if the number is even, otherwise answer "no"
-Win rule: For win, you need correct answerd by three times in one row
+Win rule: For a win, you need correct answered by three times in one row
 
 [![asciicast](https://asciinema.org/a/376782.svg)](https://asciinema.org/a/376782)
+
+## Game #2 - "Brain Calc"
+```bash
+$ brain-calc
+```
+
+Rule: What is the result of the expression?
+Win rule: For a win, you need correct answered by three times in one row
+
+[![asciicast](https://asciinema.org/a/376821.svg)](https://asciinema.org/a/376821)
+
+## Game #3 - "Brain gcd"
+```bash
+$ brain-gcd
+```
+
+Rule: Find the greatest common divisor of given numbers.
+Win rule: For a win, you need correct answered by three times in one row
+
+[![asciicast](https://asciinema.org/a/376823.svg)](https://asciinema.org/a/376823)
+
+## Game #4 - "Brain Progression"
+```bash
+$ brain-progression
+```
+
+Rule: What number is missing in the progression?
+Win rule: For a win, you need correct answered by three times in one row
+
+[![asciicast](https://asciinema.org/a/XkXITJnIgoZj1v1NahX07gPZs.svg)](https://asciinema.org/a/XkXITJnIgoZj1v1NahX07gPZs)
