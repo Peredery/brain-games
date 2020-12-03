@@ -1,34 +1,34 @@
 import getRndNumber from '../randomNumber.js';
+import initialGame from '../index.js';
 
-const getOperation = (num) => {
-  switch (num) {
-    case 0:
-      return '+';
-    case 1:
-      return '-';
-    default:
-      return '*';
-  }
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
+  const rndOperatorIndex = getRndNumber(0, operators.length - 1);
+  return operators[rndOperatorIndex];
 };
 
-const calculateExpression = (firstNum, secondNum, operation) => {
-  switch (operation) {
+const calculateExpression = (firstNum, secondNum, operator) => {
+  switch (operator) {
     case '+':
       return firstNum + secondNum;
     case '-':
       return firstNum - secondNum;
-    default:
+    case '*':
       return firstNum * secondNum;
+    default:
+      throw new Error(`Unknown operator: ${operator}`);
   }
 };
 
-const init = () => {
+const rules = 'What is the result of the expression?';
+
+const getGameRound = () => {
   const firstNum = getRndNumber(0, 55);
   const secondNum = getRndNumber(0, 55);
-  const operation = getOperation(getRndNumber(0, 2));
-  const correctAnswer = String(calculateExpression(firstNum, secondNum, operation));
-  const question = `${firstNum} ${operation} ${secondNum}`;
+  const operator = getRandomOperator();
+  const correctAnswer = String(calculateExpression(firstNum, secondNum, operator));
+  const question = `${firstNum} ${operator} ${secondNum}`;
   return [question, correctAnswer];
 };
 
-export default init;
+export default () => initialGame(getGameRound, rules);

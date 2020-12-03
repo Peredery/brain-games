@@ -1,4 +1,5 @@
 import getRndNumber from '../randomNumber.js';
+import initialGame from '../index.js';
 
 const getProgression = (startNum, incrNum) => {
   let progression = [startNum];
@@ -16,14 +17,16 @@ const hideElFromProgression = (progression, indexOfHidden) => {
   return newArr;
 };
 
-const init = () => {
+const rules = 'What number is missing in the progression?';
+
+const getGameRound = () => {
   const startNum = getRndNumber(1, 50);
   const incrNum = getRndNumber(1, 20);
   const progression = getProgression(startNum, incrNum);
-  const indexOfHidden = getRndNumber(0, 10);
+  const indexOfHidden = getRndNumber(0, progression.length - 1);
   const question = hideElFromProgression(progression, indexOfHidden).join(' ');
   const correctAnswer = String(progression[indexOfHidden]);
   return [question, correctAnswer];
 };
 
-export default init;
+export default () => initialGame(getGameRound, rules);
