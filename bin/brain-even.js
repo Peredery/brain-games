@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import startGame from '../src/index.js';
+import startGame from '../src/games/brain-even.js';
 
-const RULES = 'Answer "yes" if the number is even, otherwise answer "no"';
-
-startGame(0, RULES);
+startGame();
