@@ -2,6 +2,7 @@ import getRndNumber from '../randomNumber.js';
 import initialGame from '../index.js';
 
 const getGcd = (a, b) => {
+  if (a === b) return a;
   let gcd = 1;
   const border = Math.abs(a - b);
   for (let i = 1; i <= border; i += 1) {
