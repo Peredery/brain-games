@@ -11,7 +11,7 @@ const getGcd = (a, b) => {
   return gcd;
 };
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const getGameRound = () => {
   const firstNum = getRndNumber(1, 20);
@@ -21,4 +21,4 @@ const getGameRound = () => {
   return [question, correctAnswer];
 };
 
-export default () => initialGame(getGameRound, rules);
+export default () => initialGame(getGameRound, rule);

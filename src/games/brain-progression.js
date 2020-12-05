@@ -11,22 +11,22 @@ const getProgression = (startNum, incrNum) => {
   return progression;
 };
 
-const hideElFromProgression = (progression, indexOfHidden) => {
-  const newArr = [...progression];
-  newArr[indexOfHidden] = '..';
-  return newArr;
+const getQuestion = (progression, indexOfHidden) => {
+  const question = [...progression];
+  question[indexOfHidden] = '..';
+  return question;
 };
 
-const rules = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
 
 const getGameRound = () => {
   const startNum = getRndNumber(1, 50);
   const incrNum = getRndNumber(1, 20);
   const progression = getProgression(startNum, incrNum);
   const indexOfHidden = getRndNumber(0, progression.length - 1);
-  const question = hideElFromProgression(progression, indexOfHidden).join(' ');
+  const question = getQuestion(progression, indexOfHidden).join(' ');
   const correctAnswer = String(progression[indexOfHidden]);
   return [question, correctAnswer];
 };
 
-export default () => initialGame(getGameRound, rules);
+export default () => initialGame(getGameRound, rule);
