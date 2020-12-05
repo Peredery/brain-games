@@ -20,7 +20,7 @@ const calculateExpression = (firstNum, secondNum, operator) => {
   }
 };
 
-const rules = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
 const getGameRound = () => {
   const firstNum = getRndNumber(0, 55);
@@ -31,4 +31,4 @@ const getGameRound = () => {
   return [question, correctAnswer];
 };
 
-export default () => initialGame(getGameRound, rules);
+export default () => initialGame(getGameRound, rule);

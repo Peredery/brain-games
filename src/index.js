@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
 const askInteractiveQuestion = (text) => readlineSync.question(`${text} `);
+const printMsg = (text) => console.log(text);
 const checkCorrectType = (answer) => typeof answer === 'string';
 
 const playGame = (getGameRound, name) => {
@@ -8,22 +9,22 @@ const playGame = (getGameRound, name) => {
   for (let round = 0; round < maxGameRounds; round += 1) {
     const [question, correctAnswer] = getGameRound();
     if (!checkCorrectType(correctAnswer)) throw new Error('Incorrect type of "correctAnswer", should be "string"');
-    console.log(`Question: ${question}`);
+    printMsg(`Question: ${question}`);
     const userAnswer = askInteractiveQuestion('Your answer:');
     if (userAnswer !== correctAnswer) {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      console.log(`Let's try again, ${name}!`);
+      printMsg(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      printMsg(`Let's try again, ${name}!`);
       return;
     }
-    console.log('Correct!');
+    printMsg('Correct!');
   }
-  console.log(`Congratulations, ${name}!`);
+  printMsg(`Congratulations, ${name}!`);
 };
 
-export default (getGameRound, gameRules) => {
-  console.log('Welcome to the Brain Games!');
+export default (getGameRound, gameRule) => {
+  printMsg('Welcome to the Brain Games!');
   const name = askInteractiveQuestion('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  console.log(gameRules);
+  printMsg(`Hello, ${name}!`);
+  printMsg(gameRule);
   playGame(getGameRound, name);
 };
